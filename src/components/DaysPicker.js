@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./DaysPicker.css";
-const DaysPicker = () => {
-  const [selectedDays, setSelectedDays] = useState([]);
 
+const DaysPicker = ({ selectedDays, setSelectedDays }) => {
+  
   const toggleDay = (day) => {
     if (selectedDays.includes(day)) {
       setSelectedDays(selectedDays.filter((d) => d !== day));
@@ -10,11 +10,13 @@ const DaysPicker = () => {
       setSelectedDays([...selectedDays, day]);
     }
   };
+
   const setDay = (items) => {
     setSelectedDays(items);
   };
 
   const days = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
+
   return (
     <div className="days">
       <button
@@ -41,6 +43,7 @@ const DaysPicker = () => {
       >
         ПН/ВТ
       </button>
+
       {days.map((day) => (
         <button
           className={`days__button ${
@@ -48,7 +51,6 @@ const DaysPicker = () => {
           }`}
           key={day}
           type="button"
-          selected={selectedDays.includes(day)}
           onClick={() => toggleDay(day)}
         >
           {day}
