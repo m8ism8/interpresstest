@@ -1,0 +1,19 @@
+.days {
+  display: grid;
+  grid-column: span 3;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 10px;
+}
+
+.days__button {
+  padding: 10px;
+  background-color: #e0e0e0;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.selected {
+  background-color: #007bff;
+  color: white;
+}
